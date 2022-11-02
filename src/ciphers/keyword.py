@@ -41,7 +41,7 @@ class KeywordCipher(CipherWindow):
     def __init__(self, application, mode):
         self.stringvar_entry = None
 
-        super(KeywordCipher, self).__init__(application, "Keyword Cipher - " + mode)
+        super(KeywordCipher, self).__init__(application, "Keyword шифр - " + mode)
 
     def get_key(self):
         """Returns the key or None if it is invalid"""
@@ -56,7 +56,7 @@ class KeywordCipher(CipherWindow):
     def tk_key_frame(self):
         """Get the key input"""
         frame = tk.Frame(self)
-        tk.Label(frame, text="Keyword: ").grid(row=0, column=0)
+        tk.Label(frame, text="Ключове слово: ").grid(row=0, column=0)
         self.stringvar_entry = tk.StringVar(frame)
         self.stringvar_entry.trace("w", lambda *args: self.update_output())
         tk.Entry(frame, validate="key", validatecommand=(frame.register(valid_keyword), "%P"), textvariable=self.stringvar_entry).grid(row=0, column=1)
@@ -67,7 +67,7 @@ class KeywordEncrypt(KeywordCipher):
     """Keyword Encryption Cipher Window"""
 
     def __init__(self, application):
-        super(KeywordEncrypt, self).__init__(application, "Encrypt")
+        super(KeywordEncrypt, self).__init__(application, "Шифрування")
 
     def run_cipher(self, text, keyword):
         mapping = keyword_mapping(keyword)
@@ -78,7 +78,7 @@ class KeywordDecrypt(KeywordCipher):
     """Keyword Decryption Cipher Window"""
 
     def __init__(self, application):
-        super(KeywordDecrypt, self).__init__(application, "Decrypt")
+        super(KeywordDecrypt, self).__init__(application, "Розшифрування")
 
     def run_cipher(self, text, keyword):
         mapping = keyword_mapping(keyword)
