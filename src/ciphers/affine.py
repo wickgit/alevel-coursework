@@ -119,7 +119,7 @@ class AffineEncrypt(AffineCipher):
         a, b = key
         if greatest_common_divisor(a, 26) != 1:
             # display a warning that it is impossible to decrypt the cipher text
-            self.set_error("Warning: cannot be decrypted as A and 26 are not co-prime")
+            self.set_error("Увага: не можна розшифрувати, адже A та 26 є не співпростими!")
         return affine(text, a, b)
 
 
