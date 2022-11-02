@@ -69,13 +69,13 @@ class MainMenu(tk.Frame):
             # setup the encrypt button
             def encrypt_command():
                 self.application.show(cipher_encrypt)
-            encrypt_button = tk.Button(self, text="Encrypt", command=encrypt_command)
+            encrypt_button = tk.Button(self, text="Зашифрувати", command=encrypt_command)
             encrypt_button.grid(row=self.next_row, column=1, sticky="NESW")
 
             # setup the decrypt button
             def decrypt_command():
                 self.application.show(cipher_decrypt)
-            decrypt_button = tk.Button(self, text="Decrypt", command=decrypt_command)
+            decrypt_button = tk.Button(self, text="Розшифрувати", command=decrypt_command)
             decrypt_button.grid(row=self.next_row, column=2, sticky="NESW")
 
         # increment the next_row variable so the next item goes on the next row
