@@ -15,7 +15,7 @@ class Application(tk.Tk):
     def __init__(self):
         super(Application, self).__init__()
         # set the window title & that it is not resizable.
-        self.title("Ciphers")
+        self.title("Шифри русофобів")
         self.resizable(0, 0)
         self.frame = None
         # When first opened, display the Main Menu
