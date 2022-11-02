@@ -85,7 +85,7 @@ class AffineCipher(CipherWindow):
         self.numentry_a = None
         self.numentry_b = None
 
-        super(AffineCipher, self).__init__(application, "Affine Cipher - " + mode)
+        super(AffineCipher, self).__init__(application, "Афінний шифр - " + mode)
 
     def get_key(self):
         """Returns the key or None if it is invalid"""
@@ -113,7 +113,7 @@ class AffineEncrypt(AffineCipher):
     """Affine Encryption Cipher Window"""
 
     def __init__(self,  application):
-        super(AffineEncrypt, self).__init__( application, "Encrypt")
+        super(AffineEncrypt, self).__init__( application, "Зашифрувати")
 
     def run_cipher(self, text, key):
         a, b = key
@@ -127,7 +127,7 @@ class AffineDecrypt(AffineCipher):
     """Affine Decryption Cipher Window"""
 
     def __init__(self,  application):
-        super(AffineDecrypt, self).__init__( application,"Decrypt")
+        super(AffineDecrypt, self).__init__( application,"Розшифрувати")
 
     def run_cipher(self, text, key):
         a, b = key
