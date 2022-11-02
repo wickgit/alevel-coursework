@@ -27,7 +27,7 @@ class ScytaleCipher(CipherWindow):
     def __init__(self,  application, mode):
         self.numentry_columns = None
 
-        super(ScytaleCipher, self).__init__( application, "Scytale - " + mode)
+        super(ScytaleCipher, self).__init__( application, "Шифр Скитала - " + mode)
 
     def get_key(self):
         """Returns the key or None if it is invalid"""
@@ -43,7 +43,7 @@ class ScytaleCipher(CipherWindow):
     def tk_key_frame(self):
         """Get the key input"""
         frame = tk.Frame(self)
-        self.numentry_columns = NumEntry(frame, label="Columns: ", min=1, default=1, callback=self.update_output)
+        self.numentry_columns = NumEntry(frame, label="Стовпці: ", min=1, default=1, callback=self.update_output)
         self.numentry_columns.grid(row=0, column=0)
         return frame
 
@@ -52,7 +52,7 @@ class ScytaleEncrypt(ScytaleCipher):
     """Scytale Encryption Cipher Window"""
 
     def __init__(self,  application):
-        super(ScytaleEncrypt, self).__init__( application,"Encrypt")
+        super(ScytaleEncrypt, self).__init__( application,"Шифрування")
 
     def run_cipher(self, text, columns):
         return scytale(text, columns)
@@ -62,7 +62,7 @@ class ScytaleDecrypt(ScytaleCipher):
     """Scytale Decryption Cipher Window"""
 
     def __init__(self,  application):
-        super(ScytaleDecrypt, self).__init__( application,"Decrypt")
+        super(ScytaleDecrypt, self).__init__( application,"Розшифрування")
 
     def run_cipher(self, text, columns):
         return reverse_scytale(text, columns)
