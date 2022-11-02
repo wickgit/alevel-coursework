@@ -39,12 +39,6 @@ class CipherWindow(tk.Frame):
         # back button
         tk.Button(self, text="Назад", command=lambda: self.application.show_main_menu()).grid(row=0, column=1, sticky="NE")
 
-        # solve button
-        if self.get_solver() is not None:
-            self.solve_button = tk.Button(self, text="Розв'язати", command=self.show_solver, state="disabled")
-            self.solve_button.grid(row=3, column=1, sticky="NE")
-        else:
-            self.solve_button = None
 
         # when expanding the height of the window, expand the size of the text boxes.
         self.grid_rowconfigure(2, weight=1)
@@ -64,10 +58,6 @@ class CipherWindow(tk.Frame):
         self.set_error("")
         # get the input text and key
         input_text = self.get_input_text()
-
-        if self.solve_button is not None:
-            # if the input is at least 4 long, enable the solve button
-            self.solve_button["state"] = "normal" if len(input_text) >= 4 else "disabled"
 
         key = self.get_key()
         if key is None:
