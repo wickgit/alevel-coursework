@@ -87,7 +87,7 @@ class MainMenu(tk.Frame):
         tk.Label(self, text="Шифри", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
         self.create_cipher_entry("Шифр Цезаря", CaesarEncrypt, CaesarDecrypt)
         self.create_cipher_entry("Афінний шифр", AffineEncrypt, AffineDecrypt)
-        self.create_cipher_entry("Keyword Cipher", KeywordEncrypt, KeywordDecrypt)
+        self.create_cipher_entry("Keyword шифр", KeywordEncrypt, KeywordDecrypt)
         self.create_cipher_entry("Шифр Віженера", VigenereEncrypt, VigenereDecrypt)
         self.create_cipher_entry("Шифр Скитала", ScytaleEncrypt, ScytaleDecrypt)
 
