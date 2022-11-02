@@ -93,16 +93,10 @@ class MainMenu(tk.Frame):
         """ Setup the widgets for the main menu """
 
         tk.Label(self, text="Ciphers", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
-
-        self.create_subtitle("Simple Substitution Ciphers")
         self.create_cipher_entry("Caesar Cipher", CaesarEncrypt, CaesarDecrypt)
         self.create_cipher_entry("Affine Cipher", AffineEncrypt, AffineDecrypt)
         self.create_cipher_entry("Keyword Cipher", KeywordEncrypt, KeywordDecrypt)
-
-        self.create_subtitle("Polyalphabetic Substitution Ciphers")
         self.create_cipher_entry("Vigenère Cipher", VigenereEncrypt, VigenereDecrypt)
-
-        self.create_subtitle("Transposition Ciphers")
         self.create_cipher_entry("Scytale Cipher", ScytaleEncrypt, ScytaleDecrypt)
 
 
