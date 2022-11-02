@@ -18,7 +18,7 @@ class CipherWindow(tk.Frame):
         """ Setup the widgets for the cipher window """
         tk.Label(self, text=self.name, **TITLE_LABEL_OPTIONS).grid(row=0, column=0)
 
-        tk.Label(self, text="Input", **SUBTITLE_LABEL_OPTIONS).grid(row=1, column=0)
+        tk.Label(self, text="Ввід", **SUBTITLE_LABEL_OPTIONS).grid(row=1, column=0)
         # setup input text box so the output is updated every time the input changes.
         self.text_input = tk.Text(self, height=7, width=80, wrap=tk.WORD)
         self.text_input.grid(row=2, column=0, sticky="NSEW")
@@ -31,17 +31,17 @@ class CipherWindow(tk.Frame):
         self.error_label = tk.Label(self, text="", fg="red")
         self.error_label.grid(row=4, column=0)
 
-        tk.Label(self, text="Output", **SUBTITLE_LABEL_OPTIONS).grid(row=5, column=0)
+        tk.Label(self, text="Вивід", **SUBTITLE_LABEL_OPTIONS).grid(row=5, column=0)
         # setup output text box which cannot be edited.
         self.output_text = OutputText(self, height=7, width=80, wrap=tk.WORD)
         self.output_text.grid(row=6, column=0, sticky="NSEW")
 
         # back button
-        tk.Button(self, text="Back", command=lambda: self.application.show_main_menu()).grid(row=0, column=1, sticky="NE")
+        tk.Button(self, text="Назад", command=lambda: self.application.show_main_menu()).grid(row=0, column=1, sticky="NE")
 
         # solve button
         if self.get_solver() is not None:
-            self.solve_button = tk.Button(self, text="Solve", command=self.show_solver, state="disabled")
+            self.solve_button = tk.Button(self, text="Розв'язати", command=self.show_solver, state="disabled")
             self.solve_button.grid(row=3, column=1, sticky="NE")
         else:
             self.solve_button = None
