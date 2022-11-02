@@ -44,7 +44,7 @@ class CaesarCipher(CipherWindow):
     def __init__(self, application, mode):
         self.numentry_shift = None
 
-        super(CaesarCipher, self).__init__(application, "Caesar Cipher - " + mode)
+        super(CaesarCipher, self).__init__(application, "Шифр Цезаря - " + mode)
 
     def get_key(self):
         """Returns the key or None if it is invalid"""
@@ -57,7 +57,7 @@ class CaesarCipher(CipherWindow):
     def tk_key_frame(self):
         """Get the key input"""
         frame = tk.Frame(self)
-        self.numentry_shift = NumEntry(frame, label="Shift: ", min=0, max=26, default=1, callback=self.update_output)
+        self.numentry_shift = NumEntry(frame, label="Зсув: ", min=0, max=26, default=1, callback=self.update_output)
         self.numentry_shift.grid(row=0, column=0)
         return frame
 
@@ -66,7 +66,7 @@ class CaesarEncrypt(CaesarCipher):
     """Caesar Encryption Cipher Window"""
 
     def __init__(self, application):
-        super(CaesarEncrypt, self).__init__(application, "Encrypt")
+        super(CaesarEncrypt, self).__init__(application, "Шифрування")
 
     def run_cipher(self, text, shift):
         return caesar(text, shift)
@@ -76,7 +76,7 @@ class CaesarDecrypt(CaesarCipher):
     """Caesar Decryption Cipher Window"""
 
     def __init__(self, application):
-        super(CaesarDecrypt, self).__init__(application, "Decrypt")
+        super(CaesarDecrypt, self).__init__(application, "Розшифрування")
 
     def run_cipher(self, text, shift):
         # negative shift is the same as decryption
