@@ -77,14 +77,6 @@ class MainMenu(tk.Frame):
                 self.application.show(cipher_decrypt)
             decrypt_button = tk.Button(self, text="Decrypt", command=decrypt_command)
             decrypt_button.grid(row=self.next_row, column=2, sticky="NESW")
-        else:
-            # one shared encrypt and decrypt button
-
-            # setup the encrypt/decrypt button
-            def shared_command():
-                self.application.show(cipher_encrypt)
-            encrypt_button = tk.Button(self, text="Encrypt/Decrypt", command=shared_command)
-            encrypt_button.grid(row=self.next_row, column=1, columnspan=2, sticky="NESW")
 
         # increment the next_row variable so the next item goes on the next row
         self.next_row += 1
