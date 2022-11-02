@@ -24,28 +24,28 @@ class SolverWindow(tk.Frame):
 
     def create_widgets(self):
         """ Setup the widgets for the solver window """
-        tk.Label(self, text=self.solver.cipher_name + " - Guess Decryption Key", **TITLE_LABEL_OPTIONS).grid(row=0, column=0)
+        tk.Label(self, text=self.solver.cipher_name + " - Вгадайте ключ-декриптор", **TITLE_LABEL_OPTIONS).grid(row=0, column=0)
         # back button
-        tk.Button(self, text="Back", command=self.go_back).grid(row=0, column=1, sticky="NE")
+        tk.Button(self, text="Назад", command=self.go_back).grid(row=0, column=1, sticky="NE")
         # stop button
-        self.stop_button = tk.Button(self, text="Stop", command=self.stop_solver)
+        self.stop_button = tk.Button(self, text="Зупинити", command=self.stop_solver)
         self.stop_button.grid(row=3, column=1, sticky="NE")
         # progress bar
-        tk.Label(self, text="Progress", **SUBTITLE_LABEL_OPTIONS).grid(row=3, column=0)
+        tk.Label(self, text="Прогрес", **SUBTITLE_LABEL_OPTIONS).grid(row=3, column=0)
         self.progress_bar = ProgressBar(self)
         self.progress_bar.grid(row=4, column=0, sticky="NSEW")
         # set the first column to be expandable
         self.grid_columnconfigure(0, weight=1)
 
         # setup the output scroll frame
-        tk.Label(self, text="Outputs", **SUBTITLE_LABEL_OPTIONS).grid(row=1, column=0)
+        tk.Label(self, text="Виводи", **SUBTITLE_LABEL_OPTIONS).grid(row=1, column=0)
         self.outputs_scroll_frame = ScrollFrame(self)
         self.outputs_scroll_frame.grid(row=2, column=0, sticky="NSEW")
         self.outputs_inner_frame = self.outputs_scroll_frame.inner_frame
         # setup headings in the output scroll frame
-        tk.Label(self.outputs_inner_frame, text="Score").grid(row=0, column=0, padx=10)
-        tk.Label(self.outputs_inner_frame, text="Decryption Key").grid(row=0, column=1, padx=10)
-        tk.Label(self.outputs_inner_frame, text="Text").grid(row=0, column=2)
+        tk.Label(self.outputs_inner_frame, text="Рахунок").grid(row=0, column=0, padx=10)
+        tk.Label(self.outputs_inner_frame, text="Ключ-декриптор").grid(row=0, column=1, padx=10)
+        tk.Label(self.outputs_inner_frame, text="Текст").grid(row=0, column=2)
 
     def update_from_solver(self):
         """ Called 30 times a second on the main process to update progress from solver process """
