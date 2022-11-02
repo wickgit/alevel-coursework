@@ -113,7 +113,7 @@ class AffineEncrypt(AffineCipher):
     """Affine Encryption Cipher Window"""
 
     def __init__(self,  application):
-        super(AffineEncrypt, self).__init__( application, "Зашифрувати")
+        super(AffineEncrypt, self).__init__( application, "Шифрування")
 
     def run_cipher(self, text, key):
         a, b = key
@@ -127,7 +127,7 @@ class AffineDecrypt(AffineCipher):
     """Affine Decryption Cipher Window"""
 
     def __init__(self,  application):
-        super(AffineDecrypt, self).__init__( application,"Розшифрувати")
+        super(AffineDecrypt, self).__init__( application,"Розшифрування")
 
     def run_cipher(self, text, key):
         a, b = key
