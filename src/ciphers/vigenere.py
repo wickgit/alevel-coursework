@@ -71,7 +71,7 @@ class VigenereCipher(CipherWindow):
     def __init__(self, application, mode):
         self.stringvar_entry = None
 
-        super(VigenereCipher, self).__init__(application, "Vigenère Cipher - " + mode)
+        super(VigenereCipher, self).__init__(application, "Шифр Віженера - " + mode)
 
     def get_key(self):
         """Returns the key or None if it is invalid"""
@@ -86,7 +86,7 @@ class VigenereCipher(CipherWindow):
     def tk_key_frame(self):
         """Get the key input"""
         frame = tk.Frame(self)
-        tk.Label(frame, text="Key: ").grid(row=0, column=0)
+        tk.Label(frame, text="Ключ: ").grid(row=0, column=0)
         self.stringvar_entry = tk.StringVar(frame)
         self.stringvar_entry.trace("w", lambda *args: self.update_output())
         tk.Entry(frame, validate="key", validatecommand=(frame.register(valid_key), "%P"), textvariable=self.stringvar_entry).grid(row=0, column=1)
@@ -97,7 +97,7 @@ class VigenereEncrypt(VigenereCipher):
     """Vigenère Encryption Cipher Window"""
 
     def __init__(self, application):
-        super(VigenereEncrypt, self).__init__(application, "Encrypt")
+        super(VigenereEncrypt, self).__init__(application, "Шифрування")
 
     def run_cipher(self, text, key):
         shifts = string_to_shifts(key)
@@ -108,7 +108,7 @@ class VigenereDecrypt(VigenereCipher):
     """Vigenère Decryption Cipher Window"""
 
     def __init__(self, application):
-        super(VigenereDecrypt, self).__init__(application, "Decrypt")
+        super(VigenereDecrypt, self).__init__(application, "Розшифрування")
 
     def run_cipher(self, text, key):
         shifts = string_to_shifts(key)
