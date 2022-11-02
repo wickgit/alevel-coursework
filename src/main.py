@@ -84,12 +84,12 @@ class MainMenu(tk.Frame):
     def create_widgets(self):
         """ Setup the widgets for the main menu """
 
-        tk.Label(self, text="Ciphers", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
-        self.create_cipher_entry("Caesar Cipher", CaesarEncrypt, CaesarDecrypt)
-        self.create_cipher_entry("Affine Cipher", AffineEncrypt, AffineDecrypt)
+        tk.Label(self, text="Шифри", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
+        self.create_cipher_entry("Шифр Цезаря", CaesarEncrypt, CaesarDecrypt)
+        self.create_cipher_entry("Афінний шифр", AffineEncrypt, AffineDecrypt)
         self.create_cipher_entry("Keyword Cipher", KeywordEncrypt, KeywordDecrypt)
-        self.create_cipher_entry("Vigenère Cipher", VigenereEncrypt, VigenereDecrypt)
-        self.create_cipher_entry("Scytale Cipher", ScytaleEncrypt, ScytaleDecrypt)
+        self.create_cipher_entry("Шифр Віженера", VigenereEncrypt, VigenereDecrypt)
+        self.create_cipher_entry("Шифр Скитала", ScytaleEncrypt, ScytaleDecrypt)
 
 
 if __name__ == "__main__":
