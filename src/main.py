@@ -83,13 +83,13 @@ class MainMenu(tk.Frame):
 
     def create_widgets(self):
         """ Setup the widgets for the main menu """
-
-        tk.Label(self, text="Шифри", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
-        self.create_cipher_entry("Шифр Цезаря", CaesarEncrypt, CaesarDecrypt)
-        self.create_cipher_entry("Афінний шифр", AffineEncrypt, AffineDecrypt)
-        self.create_cipher_entry("Keyword шифр", KeywordEncrypt, KeywordDecrypt)
-        self.create_cipher_entry("Шифр Віженера", VigenereEncrypt, VigenereDecrypt)
-        self.create_cipher_entry("Шифр Скитала", ScytaleEncrypt, ScytaleDecrypt)
+        white_space = ' '
+        tk.Label(self, text="Українські Шифри", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
+        self.create_cipher_entry(f"Шифр Цезаря{white_space*10}", CaesarEncrypt, CaesarDecrypt)
+        self.create_cipher_entry(f"Афінний шифр{white_space*10}", AffineEncrypt, AffineDecrypt)
+        self.create_cipher_entry(f"Keyword шифр{white_space*10}", KeywordEncrypt, KeywordDecrypt)
+        self.create_cipher_entry(f"Шифр Віженера{white_space*10}", VigenereEncrypt, VigenereDecrypt)
+        self.create_cipher_entry(f"Шифр Скитала{white_space*10}", ScytaleEncrypt, ScytaleDecrypt)
 
 
 if __name__ == "__main__":
