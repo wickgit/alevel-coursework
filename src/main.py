@@ -85,11 +85,11 @@ class MainMenu(tk.Frame):
         """ Setup the widgets for the main menu """
         white_space = ' '
         tk.Label(self, text="Українські Шифри", **TITLE_LABEL_OPTIONS).grid(row=0, sticky="NW")
-        self.create_cipher_entry(f"Шифр Цезаря{white_space*10}", CaesarEncrypt, CaesarDecrypt)
-        self.create_cipher_entry(f"Афінний шифр{white_space*10}", AffineEncrypt, AffineDecrypt)
-        self.create_cipher_entry(f"Keyword шифр{white_space*10}", KeywordEncrypt, KeywordDecrypt)
-        self.create_cipher_entry(f"Шифр Віженера{white_space*10}", VigenereEncrypt, VigenereDecrypt)
-        self.create_cipher_entry(f"Шифр Скитала{white_space*10}", ScytaleEncrypt, ScytaleDecrypt)
+        self.create_cipher_entry(f"Шифр Цезаря{white_space*6}", CaesarEncrypt, CaesarDecrypt)
+        self.create_cipher_entry(f"Афінний шифр{white_space*6}", AffineEncrypt, AffineDecrypt)
+        self.create_cipher_entry(f"Keyword шифр{white_space*6}", KeywordEncrypt, KeywordDecrypt)
+        self.create_cipher_entry(f"Шифр Віженера{white_space*6}", VigenereEncrypt, VigenereDecrypt)
+        self.create_cipher_entry(f"Шифр Скитала{white_space*6}", ScytaleEncrypt, ScytaleDecrypt)
 
 
 if __name__ == "__main__":
